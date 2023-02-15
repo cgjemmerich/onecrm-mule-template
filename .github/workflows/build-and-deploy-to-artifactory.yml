@@ -10,7 +10,7 @@ on:
  
 jobs:
   build:
-    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/build-and-deploy-to-artifactory.yml@develop
+    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/build-and-deploy-to-artifactory.yml@master
     with:
       # TODO: Uncomment and enter here the (typically) INT environment API Manager API ID (if applicable)
       #api_id: "12345678"

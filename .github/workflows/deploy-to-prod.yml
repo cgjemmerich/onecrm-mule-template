@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/deploy-to-prod.yml@develop
+    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/deploy-to-prod.yml@master
     with:
       # TODO: Uncomment and enter here the PROD environment API Manager API ID (if applicable)
       #api_id: "12345678"

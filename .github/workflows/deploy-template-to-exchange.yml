@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/deploy-template-to-exchange.yml@develop
+    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/deploy-template-to-exchange.yml@master
     # TODO: Uncomment and enter the ORG ID of the Exchange Business Group
     #with:
     #  org_id: "abcdef1234567890"
