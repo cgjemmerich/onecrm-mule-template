@@ -1,0 +1,18 @@
+name: Build and deploy to Artifactory
+
+on:
+  # TODO: Uncomment if your artifact should only deploy to Artifactory (.e.g. for libraries)
+  # Otherwise delete this workflow file.
+  #push:
+  #  branches:    
+  #    - develop # Execute whenever a push to develop branch happens
+  workflow_dispatch: # or run this from the Github Actions UI
+ 
+jobs:
+  build:
+    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/build-and-deploy-to-artifactory.yml@develop
+    with:
+      # TODO: Uncomment and enter here the (typically) INT environment API Manager API ID (if applicable)
+      #api_id: "12345678"
+      mule_env: "int"
+    secrets: inherit

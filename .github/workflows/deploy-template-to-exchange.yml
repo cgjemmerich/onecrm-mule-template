@@ -1,0 +1,17 @@
+name: Build and deploy to Exchange
+
+on:
+  # TODO: Uncomment if this repository contains a template that will finally be deployed to Exchange
+  # Otherwise delete this workflow file.
+  #push:
+  #  branches:
+  #    - 'release/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/deploy-template-to-exchange.yml@develop
+    # TODO: Uncomment and enter the ORG ID of the Exchange Business Group
+    #with:
+    #  org_id: "abcdef1234567890"
+    secrets: inherit

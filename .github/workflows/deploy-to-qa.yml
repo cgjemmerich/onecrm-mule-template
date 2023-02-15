@@ -1,0 +1,23 @@
+name: Build and deploy to QA
+ 
+on:
+  # TODO: Uncomment if your artifact is deployable to QA Runtime Manager 
+  #push: 
+  #  tags:        
+  #    - 'qa-*' 
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/deploy-to-qa.yml@develop
+    with:
+      # TODO: Uncomment and enter here the QA environment API Manager API ID (if applicable)
+      #api_id: "12345678"
+      mule_env: "qa"
+      # TODO: Uncomment and enter your Business Group Name
+      # business_group_name: "ONE.CRM\\OEM"
+      # TODO: Uncomment and enter the worker_type if not Micro
+      # worker_type: "Micro"
+      # TODO: Uncomment if more than one worker is needed.
+      # workers: "1"
+    secrets: inherit

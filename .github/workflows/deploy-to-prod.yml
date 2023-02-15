@@ -1,0 +1,22 @@
+name: Build and deploy to PROD
+
+on:
+  # TODO: Uncomment if your artifact is deployable to PROD Runtime Manager
+  #push:
+  #  branches: "release/*"
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/deploy-to-prod.yml@develop
+    with:
+      # TODO: Uncomment and enter here the PROD environment API Manager API ID (if applicable)
+      #api_id: "12345678"
+      mule_env: "prod"
+      # TODO: Uncomment and enter your Business Group Name
+      # business_group_name: "ONE.CRM\\OEM"
+      # TODO: Uncomment and enter the worker_type if not Micro
+      # worker_type: "Micro"
+      # TODO: Uncomment if more than one worker is needed.
+      # workers: "1"
+    secrets: inherit

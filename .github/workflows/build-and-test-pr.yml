@@ -1,0 +1,17 @@
+name: Build and run the unit tests for PR
+
+on:
+  # Execute whenever a pull request is created or updated
+  pull_request:
+  # Execute when manually triggered from Github Actions UI
+  workflow_dispatch:
+
+jobs:
+  build:
+    # All CICD logic is in reusable flows and can be called with parameters, see "inputs" section there
+    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/build-and-test-pr.yml@develop
+    with:
+      # TODO: If applicable: Uncomment and enter the INT environment API Manager API ID
+      #api_id: "12345678"
+      mule_env: "int"
+    secrets: inherit

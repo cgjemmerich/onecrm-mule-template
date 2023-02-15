@@ -1,0 +1,24 @@
+name: Build and deploy to Artifactory and INT
+ 
+on:
+  # TODO: Uncomment if your artifact is deployable to Artifactory and INT Runtime Manager
+  # Otherwise delete this workflow file.
+  #push:
+  #  branches:    
+  #    - develop
+  workflow_dispatch:
+ 
+jobs:
+  build:
+    uses: vwdfive/onecrm-reusable-workflows/.github/workflows/build-and-deploy-to-artifactory-and-INT.yml@develop
+    with:
+      # TODO: Uncomment and enter here the (typically) INT environment API Manager API ID (if applicable)
+      #api_id: "12345678"
+      mule_env: "int"
+      # TODO: Uncomment and enter your Business Group Name
+      # business_group_name: "ONE.CRM\\OEM"
+      # TODO: Uncomment and enter the worker_type if not Micro
+      # worker_type: "Micro"
+      # TODO: Uncomment if more than one worker is needed.
+      # workers: "1"
+    secrets: inherit
